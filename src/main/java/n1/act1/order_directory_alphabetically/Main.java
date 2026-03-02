@@ -7,5 +7,6 @@ public class Main {
 
         fileUtils.listDirectoryTreeWithDetails("src");
         fileUtils.listDirectoryTreeWithDetailsToFile("src", "directory_tree.txt");
+        fileUtils.readTextFile("example_text_file.txt");
     }
 }

@@ -57,6 +57,20 @@ public class FileUtils {
         }
     }
 
+    public void readTextFile(String filePath) {
+        Path path = Path.of(filePath);
+        try {
+            List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
+            System.out.println("=== Content of " + path.toAbsolutePath() + " ===");
+            for (String line : lines) {
+                System.out.println(line);
+            }
+            System.out.println("===================");
+        } catch (IOException e) {
+            System.out.println("Error reading file: " + e.getMessage());
+        }
+    }
+
 
     private void listDirectoryTreeRecursive(Path directory, String indent) throws IOException {
         List<Path> entries = new ArrayList<>();
