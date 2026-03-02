@@ -1,7 +1,6 @@
 package n1.act1.order_directory_alphabetically;
 
-import java.io.BufferedWriter;
-import java.io.IOException;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
@@ -68,6 +67,28 @@ public class FileUtils {
             System.out.println("===================");
         } catch (IOException e) {
             System.out.println("Error reading file: " + e.getMessage());
+        }
+    }
+
+    public void serializeObject(Object obj, String filePath) {
+        Path path = Path.of(filePath);
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(path.toFile()))) {
+            oos.writeObject(obj);
+            System.out.println("Object serialized successfully to: " + path.toAbsolutePath());
+        } catch (IOException e) {
+            System.out.println("Error serializing object: " + e.getMessage());
+        }
+    }
+
+    public Object deserializeObject(String filePath) {
+        Path path = Path.of(filePath);
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(path.toFile()))) {
+            Object obj = ois.readObject();
+            System.out.println("Object deserialized successfully from: " + path.toAbsolutePath());
+            return obj;
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("Error deserializing object: " + e.getMessage());
+            return null;
         }
     }
 
