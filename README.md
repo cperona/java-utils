@@ -1,5 +1,12 @@
 # Java Utils
 
+## Compile and run
+To compile the .java files, go to the project directory and run: \
+``` javac -d . src/main/java/n1/* ``` 
+
+Then to run the compiled classes, type:\
+``` java n1.Main ```
+
 Program with tools to manage files and directories, and read and write information on the file system.
 
 ## Exercise 1
@@ -16,3 +23,5 @@ Add functionality to read any TXT file and display its contents in the console.
 
 ## Exercise 5
 The program must serialize a Java object into a .ser file and then deserialize it.
+
+#ITA.S1.05
