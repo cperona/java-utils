@@ -1,4 +1,4 @@
-package n1.act1.order_directory_alphabetically;
+package n1;
 
 public class Main {
     public static void main(String[] args) {

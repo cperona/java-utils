@@ -1,4 +1,4 @@
-package n1.act1.order_directory_alphabetically;
+package n1;
 
 import java.io.Serializable;
 
