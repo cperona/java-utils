@@ -6,5 +6,6 @@ public class Main {
         //fileUtils.listDirectoryAlphabetically("/");
 
         fileUtils.listDirectoryTreeWithDetails("src");
+        fileUtils.listDirectoryTreeWithDetailsToFile("src", "directory_tree.txt");
     }
 }
